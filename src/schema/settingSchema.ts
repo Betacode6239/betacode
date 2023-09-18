@@ -69,7 +69,7 @@ export type UpdateIntegrationSettingInput = z.infer<typeof UpdateIntegrationSche
 export const CreateSettingSchema = z.object({
     type: SettingsTypeSchema,
     lable: z.string(),
-    value: z.any()
+    value: GeneralSettingValueSchema.or(IntegrationSettingSchema)
 })
 
 export type CreateSettingInput = z.TypeOf<typeof CreateSettingSchema>;

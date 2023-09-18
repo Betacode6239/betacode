@@ -125,10 +125,10 @@ const Footer = () => {
 
                         <p>
                             {
-                                `${data?.value.contact.address ? data?.value.contact.address + ',' : ''}
-                                ${data?.value.contact.city ? data?.value.contact.city + ',' : ''}
-                                ${data?.value.contact.country ? data?.value.contact.country + ',' : ''}
-                                ${data?.value.contact.pincode ? '(' + data?.value.contact.pincode + ')' : ''}
+                                `${data?.value?.contact?.address ? data?.value?.contact?.address + ',' : ''}
+                                ${data?.value?.contact?.city ? data?.value?.contact?.city + ',' : ''}
+                                ${data?.value?.contact?.country ? data?.value?.contact?.country + ',' : ''}
+                                ${data?.value?.contact?.pincode ? '(' + data?.value?.contact?.pincode + ')' : ''}
                                 `
                             }
                         </p>

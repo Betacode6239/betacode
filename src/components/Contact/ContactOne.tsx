@@ -40,13 +40,13 @@ const ContactOne = () => {
         {
             icon: <Phone className='text-primary' />,
             content: <>
-                <p>{data?.value.contact.phone||'-'}</p>
+                <p>{data?.value?.contact?.phone||'-'}</p>
             </>
         },
         {
             icon: <Mail className='text-primary' />,
             content: <>
-                <a className='text-muted-foreground' href={`mailto:${data?.value.contact.email||'#'}`}>{data?.value.contact.email||'-'}</a>
+                <a className='text-muted-foreground' href={`mailto:${data?.value?.contact?.email||'#'}`}>{data?.value?.contact?.email||'-'}</a>
             </>
         },
         {
@@ -54,10 +54,10 @@ const ContactOne = () => {
             content: <>
                 <p>
                     {
-                        `${data?.value.contact.address? data?.value.contact.address + ',':''}
-                        ${data?.value.contact.city? data?.value.contact.city + ',':''}
-                        ${data?.value.contact.country? data?.value.contact.country + ',':''}
-                        ${data?.value.contact.pincode? '('+data?.value.contact.pincode + ')':''}
+                        `${data?.value?.contact?.address? data?.value?.contact?.address + ',':''}
+                        ${data?.value?.contact?.city? data?.value?.contact?.city + ',':''}
+                        ${data?.value?.contact?.country? data?.value?.contact?.country + ',':''}
+                        ${data?.value?.contact?.pincode? '('+data?.value?.contact?.pincode + ')':''}
                         `
                     }
                 </p>
