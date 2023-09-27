@@ -31,6 +31,7 @@
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-toast": "^1.1.4",
     "@react-spring/web": "^9.7.3",
+    "@supabase/supabase-js": "^2.36.0",
     "@t3-oss/env-nextjs": "^0.3.1",
     "@tanstack/react-query": "^4.29.7",
     "@tawk.to/tawk-messenger-react": "^2.0.2",

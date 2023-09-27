@@ -1,22 +1,4 @@
-const SoftwareCodesList = [
-    'cbs',
-    'fds',
-    'gs',
-    'hss',
-    'fss',
-    'sbs',
-    'sms',
-    'crms',
-    'hrmss',
-    'ets',
-    'eps',
-    'oes',
-    'loan_ms',
-    'ress',
-    'tbs'
-] as const;
 
-export type SoftwareCodes =  typeof SoftwareCodesList[number]
 
 
 export const SoftwareList: {
@@ -24,116 +6,183 @@ export const SoftwareList: {
     description: string,
     image?: string,
     href: string,
-    code: SoftwareCodes
+    code: string
 }[] = [
     {
-        name: "Cab Booking Software",
-        description: "Efficiently manage your fleet and bookings with our user-friendly cab booking software.",
-        image: "/assets/images/car-booking.jpg",
-        href: "#",
-        code: 'cbs'
+        name: "Recharge Software",
+        description: "Simplify mobile recharge transactions with our versatile Recharge Software.",
+        image: "",
+        href: "/softwares",
+        code: "recharge"
     },
     {
-        name: "Food Delivery Software",
-        description: "Streamline food delivery operations and enhance customer experiences with our software.",
-        image: "/assets/images/food-delivery.png",
-        href: "#",
-        code: 'fds'
+        name: "AEPS Software",
+        description: "Enable secure Aadhaar Enabled Payment System transactions with our AEPS Software.",
+        image: "",
+        href: "/softwares",
+        code: "aeps"
     },
     {
-        name: "Grocery Software",
-        description: "Transform your grocery store into a seamless online marketplace with our grocery software.",
-        image: "/assets/images/grocery-software.png",
-        href: "#",
-        code: 'gs'
+        name: "BBPS Software",
+        description: "Streamline bill payments across various categories with our robust BBPS Software.",
+        image: "",
+        href: "/softwares",
+        code: "bbps"
     },
     {
-        name: "Home Service Software",
-        description: "Offer a variety of home services with ease, from repairs to cleaning, through our software.",
-        image: "/assets/images/home-service.png",
-        href: "#",
-        code: 'hss'
+        name: "DMT Software",
+        description: "Effortlessly manage Domestic Money Transfer operations with our DMT Software.",
+        image: "",
+        href: "/softwares",
+        code: "dmt"
     },
     {
-        name: "Fantasy Sport Software",
-        description: "Launch your fantasy sports platform with our feature-rich software solution.",
-        image: "/assets/images/fantasy-software.png",
-        href: "",
-        code: 'fss'
+        name: "UTI Software",
+        description: "Access real-time Unit Trust of India (UTI) investment data with our UTI Software.",
+        image: "",
+        href: "/softwares",
+        code: "uti"
     },
     {
-        name: "Sports Betting Software",
-        description: "Deliver a secure and exciting sports betting experience with our software.",
-        image: "/assets/images/sport-betting.png",
-        href: "#",
-        code: 'sbs'
+        name: "Hotel Software",
+        description: "Transform your hotel management with our comprehensive Hotel Software.",
+        image: "",
+        href: "/softwares",
+        code: "hotel"
     },
     {
-        name: "School Management Software",
-        description: "Efficiently manage school operations, from attendance to exam results, using our software.",
-        image: "/assets/images/school-managment.png",
-        href: "#",
-        code: 'sms'
+        name: "Bus Booking Software",
+        description: "Enhance your travel platform with real-time Bus Booking capabilities using our software.",
+        image: "",
+        href: "/softwares",
+        code: "busbooking"
+    },
+    {
+        name: "Flight Software",
+        description: "Offer efficient flight booking experiences using our Flight Booking Software.",
+        image: "",
+        href: "/softwares",
+        code: "flight"
+    },
+    {
+        name: "E-commerce Software",
+        description: "Launch and manage your e-commerce platform effortlessly with our E-commerce Software.",
+        image: "",
+        href: "/softwares",
+        code: "ecommerce"
     },
     {
         name: "CRM Software",
-        description: "Build strong customer relationships and drive sales with our CRM software.",
-        image: "/assets/images/crm.png",
-        href: "#",
-        code: 'crms'
+        description: "Build strong customer relationships and drive sales with our CRM Software.",
+        image: "",
+        href: "/softwares",
+        code: "crm"
     },
     {
-        name: "HRMS Software",
-        description: "Simplify human resource management with our comprehensive HRMS software.",
+        name: "ERP Software",
+        description: "Optimize business processes with our comprehensive ERP Software.",
         image: "",
-        href: "#",
-        code: 'hrmss'
-    },
-    {
-        name: "Employee Tracking Software",
-        description: "Monitor and optimize employee productivity with our tracking software.",
-        image: "",
-        href: "#",
-        code: 'ets'
-    },
-    {
-        name: "Ecommerce Portal Software",
-        description: "Launch and manage your e-commerce portal effortlessly with our software.",
-        image: "",
-        href: "#",
-        code: 'eps'
+        href: "/softwares",
+        code: "erp"
     },
     {
         name: "Online Education Software",
         description: "Deliver engaging online education experiences with our user-friendly software.",
         image: "",
-        href: "#",
-        code: 'oes'
+        href: "/softwares",
+        code: "education"
     },
     {
         name: "Loan Module Software",
         description: "Simplify loan processing and management with our specialized software.",
         image: "",
-        href: "#",
-        code: 'loan_ms'
+        href: "/softwares",
+        code: "loanmodule"
     },
     {
-        name: "Reseller Software",
-        description: "Empower resellers and manage partnerships with our reseller software.",
+        name: "Gaming Software",
+        description: "Enter the world of gaming with our feature-rich Gaming Software.",
         image: "",
-        href: "#",
-        code: 'ress'
+        href: "/softwares",
+        code: "gaming"
+    },
+    {
+        name: "Food Delivery Software",
+        description: "Streamline food delivery operations and enhance customer experiences with our software.",
+        image: "",
+        href: "/softwares",
+        code: "fooddelivery"
+    },
+    {
+        name: "API Reselling Software",
+        description: "Launch your API reselling business with our API Reselling Software.",
+        image: "",
+        href: "/softwares",
+        code: "apireselling"
+    },
+    {
+        name: "Cab Booking Software",
+        description: "Efficiently manage your fleet and bookings with our user-friendly cab booking software.",
+        image: "",
+        href: "/softwares",
+        code: "cabbooking"
+    },
+    {
+        name: "Grocery Software",
+        description: "Transform your grocery store into a seamless online marketplace with our grocery software.",
+        image: "",
+        href: "/softwares",
+        code: "grocery"
+    },
+    {
+        name: "Home Service Software",
+        description: "Offer a variety of home services with ease, from repairs to cleaning, through our software.",
+        image: "",
+        href: "/softwares",
+        code: "homeservice"
+    },
+    {
+        name: "Sports Betting Software",
+        description: "Deliver a secure and exciting sports betting experience with our software.",
+        image: "",
+        href: "/softwares",
+        code: "sportsbetting"
+    },
+    {
+        name: "School Management Software",
+        description: "Efficiently manage school operations, from attendance to exam results, using our software.",
+        image: "",
+        href: "/softwares",
+        code: "schoolmanagement"
+    },
+    {
+        name: "HRMS Software",
+        description: "Simplify human resource management with our comprehensive HRMS software.",
+        image: "",
+        href: "/softwares",
+        code: "hrms"
+    },
+    {
+        name: "Employee Tracking Software",
+        description: "Monitor and optimize employee productivity with our tracking software.",
+        image: "",
+        href: "/softwares",
+        code: "employeetracking"
     },
     {
         name: "Travel Booking Software",
         description: "Facilitate seamless travel bookings and reservations with our travel software.",
         image: "",
-        href: "#",
-        code: 'tbs'
+        href: "/softwares",
+        code: "travelbooking"
     }
-]
+
+];
+
+// Array of software codes
+const softwareCodes = SoftwareList.map(software => software.code);
 
 
-export function getSoftwareByCode (code: SoftwareCodes) {
+export function getSoftwareByCode(code: string) {
     return SoftwareList.find(soft => soft.code === code);
 }

@@ -66,12 +66,12 @@ const ContactOne = () => {
     ]
     return (
         <div>
-            <div className='my-10 pb-10'>
+            {/* <div className='my-10 pb-10'>
                 <SectionTitle className='text-center'>Contact Us</SectionTitle>
                 <p className='text-muted-foreground text-center max-w-2xl mx-auto'>
                     We'd love to hear from you! Whether you have questions about our services, need assistance with integration, or want to explore collaboration opportunities, our team is here to help.
                 </p>
-            </div>
+            </div> */}
             <div className='flex flex-col gap-5'>
 
                 <AnimatedGrid

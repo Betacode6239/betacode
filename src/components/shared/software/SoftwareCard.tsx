@@ -3,7 +3,6 @@ import EnquiryForm from '@/components/forms/EnquiryForm'
 import SoftwareEnquiry from '@/components/forms/SoftwareEnquiry'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { SoftwareCodes } from '@/data/Softwares'
 import { ArrowRight, MessageSquareDashed, PhoneCall } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState } from 'react'
@@ -17,7 +16,7 @@ const SoftwareCard = ({
     name: string,
     description?: string,
     image?: string,
-    code: SoftwareCodes
+    code: string
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (

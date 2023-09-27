@@ -6,6 +6,8 @@ import EditorFrame from '../codeEditor/EditorFrame';
 import Image from 'next/image';
 
 import { useSpring, animated } from '@react-spring/web'
+import WhatsappButton from '../shared/WhatsappButton';
+import Link from 'next/link';
 
 const HeroHeading = () => {
     return (
@@ -22,7 +24,7 @@ const HeroHeading = () => {
             speed={10}
             repeat={Infinity}
             style={{ display: 'inline-block' }}
-            className='text-4xl md:text-6xl font-bold'
+            className='text-4xl font-bold'
         />
     );
 }
@@ -36,15 +38,15 @@ const ApiHero = () => {
 
 
     return (
-        <div className=' w-full bg-[#010423] text-white py-32'>
+        <div className=' w-full bg-[#010423] text-white pt-32 py-20'>
             <div className='grid grid-cols-1  lg:grid-cols-2 items-center container mx-auto justify-items-center gap-10'>
                 <div className='space-y-2 max-w-lg'>
-                    <div className='min-h-[200px] md:min-h-[300px]' ><HeroHeading /></div>
+                    <div className='min-h-[100px]' ><HeroHeading /></div>
                     <p>Discover the limitless potential of our comprehensive API services. Seamlessly integrate our Recharge API, AEPS API, BBPS API, Bus Booking API, Vehicle Verification API, UTI API, Hotel Booking API, Flight Booking API, and more into your applications.</p>
 
                     <div className='flex gap-3 items-center pt-5'>
-                        <Button size={'lg'} >Contact Us</Button>
-                        <Button size={'lg'} >Our Api List</Button>
+                        <WhatsappButton><Button size={'lg'} >Contact Us</Button></WhatsappButton>
+                        <Link href={'/our-apis'}><Button size={'lg'} >Our Api List</Button></Link>
                     </div>
 
                     <div className='flex gap-3 items-center pt-5'>
@@ -52,8 +54,8 @@ const ApiHero = () => {
                         <Image src='/assets/images/hero-logo-2.png' alt="" width={136} height={40} />
                     </div>
                 </div>
-                <div className='w-full'>
-                    <animated.div className={'aspect-square'} style={{ ...springs }}>
+                <div className='w-full '>
+                    <animated.div className={'aspect-[2/1.5]'} style={{ ...springs }}>
                         <EditorFrame className='shadow-2xl shadow-primary'>
                             <EditorPanel />
                         </EditorFrame>

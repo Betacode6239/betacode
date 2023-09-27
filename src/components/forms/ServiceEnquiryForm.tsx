@@ -1,4 +1,4 @@
-import {  SoftwareList, getSoftwareByCode } from '@/data/Softwares'
+import { SoftwareList, getSoftwareByCode } from '@/data/Softwares'
 import React, { useEffect, useState } from 'react'
 import { UseFormReturn } from 'react-hook-form'
 import { FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '../ui/form'
@@ -11,31 +11,33 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 import { Textarea } from '../ui/textarea'
+import PhoneInput from '../shared/PhoneInput'
+import { ServiceCodes, getServiceByCode, servicesList } from '@/data/ServiceData'
 
 
-export type SoftwareEnquiryConfig = {
-    pinned?: string,
+export type ServiceEnquiryConfig = {
+    pinned?: ServiceCodes,
 }
 
-const SoftwareEnquiry = ({
+const ServiceEnquiry = ({
     config,
     form
 }: {
-    config?: SoftwareEnquiryConfig,
+    config?: ServiceEnquiryConfig,
     form: UseFormReturn
 }) => {
-    const [selectedSoftware, setSelecedSoftware] = useState<string>();
+    const [selectedService, setSelecedService] = useState<string>();
 
     useEffect(() => {
         if (config && config.pinned) {
-            const software = getSoftwareByCode(config.pinned)?.name;
-            form.setValue('content.productName', software);
-            setSelecedSoftware(software)
+            const service = getServiceByCode(config.pinned)?.name;
+            form.setValue('content.service', service);
+            setSelecedService(service)
         }
     }, [config])
 
     useEffect(() => {
-        form.setValue('type', 'SOFTWARE');
+        form.setValue('type', 'SERVICE');
     }, [])
 
 
@@ -43,11 +45,11 @@ const SoftwareEnquiry = ({
         <>
             <FormField
                 control={form.control}
-                name="content.software"
+                name="content.service"
                 render={({ field }) => (
                     <FormItem >
-                        <FormLabel>Softwares</FormLabel>
-                        <Select onValueChange={field.onChange} value={field.value || selectedSoftware} defaultValue={field.value||selectedSoftware}>
+                        <FormLabel>Service</FormLabel>
+                        <Select onValueChange={field.onChange} value={field.value || selectedService} defaultValue={field.value || selectedService}>
                             <FormControl >
                                 <SelectTrigger>
                                     <SelectValue placeholder="Select the Software" />
@@ -55,7 +57,7 @@ const SoftwareEnquiry = ({
                             </FormControl>
                             <SelectContent>
                                 {
-                                    SoftwareList.map(sft => {
+                                    servicesList.map(sft => {
                                         return (
                                             <SelectItem value={sft.name}>{sft.name}</SelectItem>
                                         )
@@ -63,7 +65,19 @@ const SoftwareEnquiry = ({
                                 }
                             </SelectContent>
                         </Select>
-                        <FormMessage/>
+                        <FormMessage />
+                    </FormItem>
+                )}
+            />
+
+            <FormField
+                name="content.phone"
+                render={({ field }) => (
+                    <FormItem>
+                        <FormLabel>Phone</FormLabel>
+                        <FormControl>
+                            <PhoneInput {...field} />
+                        </FormControl>
                     </FormItem>
                 )}
             />
@@ -80,8 +94,10 @@ const SoftwareEnquiry = ({
                 )}
             />
 
+
+
         </>
     )
 }
 
-export default SoftwareEnquiry
+export default ServiceEnquiry

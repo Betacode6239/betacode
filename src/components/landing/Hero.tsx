@@ -1,7 +1,5 @@
 import React from 'react'
 import Slider from 'react-slick';
-
-import { useSpring, animated } from '@react-spring/web'
 import ApiHero from '../hero-slides/ApiHero';
 import SoftwareHero from '../hero-slides/SoftwareHero';
 import { nanoid } from 'nanoid';
@@ -16,14 +14,14 @@ const Hero = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 5000,
     };
 
     const heros = [
-        <ApiHero/>,
+        <ServicesHero/>,
         <SoftwareHero/>,
-        <ServicesHero/>
+        <ApiHero/>,
     ]
 
     return (

@@ -6,6 +6,7 @@ import { ArrowRightIcon } from '@radix-ui/react-icons'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { useInView, useTrail, animated} from '@react-spring/web'
+import { apiList } from '@/data/ApiData'
 
 const Dot = () => {
     return (
@@ -13,63 +14,7 @@ const Dot = () => {
     )
 }
 
-const ApiMenuContent = [
-    {
-        lable: 'Aadhaar Verification',
-        href: '/our-apis',
-        icon: <Dot />
-    },
-    {
-        lable: 'Reacharge',
-        href: '/our-apis',
-        icon: <Dot />
-    },
-    {
-        lable: 'AEPS',
-        href: '/our-apis',
-        icon: <Dot />
-    },
-    {
-        lable: 'UTI (Pancard)',
-        href: '/our-apis',
-        icon: <Dot />
-    },
-    {
-        lable: 'Flight Booking',
-        href: '/our-apis',
-        icon: <Dot />
-    },
-    {
-        lable: 'Vehical Verification',
-        href: '/our-apis',
-        icon: <Dot />
-    },
-    {
-        lable: 'BBPS',
-        href: '/our-apis',
-        icon: <Dot />
-    },
-    {
-        lable: 'DMT',
-        href: '/our-apis',
-        icon: <Dot />
-    },
-    {
-        lable: 'Bus Booking',
-        href: '/our-apis',
-        icon: <Dot />
-    },
-    {
-        lable: 'Hotel Booking',
-        href: '/our-apis',
-        icon: <div></div>
-    },
-    {
-        lable: 'Pan Card Verifcation',
-        href: '/our-apis',
-        icon: <Dot />
-    },
-]
+const ApiMenuContent = apiList.map(api => ({lable: api.name, href: api.href, icon: <Dot/>}))
 
 const DesktopApiMenu = () => {
     const [ref, inView] = useInView();

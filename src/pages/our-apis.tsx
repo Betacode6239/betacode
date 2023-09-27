@@ -68,7 +68,19 @@ const apiCodeIconMap: { [key in ApiCodes]: any } = {
             <path id="Path_325" data-name="Path 325" d="M38,26H49a1,1,0,0,0,1-1V19H48v5H39V16h5V14H38a1,1,0,0,0-1,1V25A1,1,0,0,0,38,26Z" />
             <path id="Path_326" data-name="Path 326" d="M41.707,18.293l-1.414,1.414,2,2a1,1,0,0,0,1.414,0l6-6-1.414-1.414L43,19.586Z" />
         </g>
-    </svg>
+    </svg>,
+    'pancardverification': <svg xmlns="http://www.w3.org/2000/svg" className='w-full h-full' viewBox="0 0 58.5 42.5">
+    <g id="_98175601116276482383764" data-name="98175601116276482383764" transform="translate(-2.75 -10.75)">
+        <path id="Path_316" data-name="Path 316" d="M57,10.75H7A4.26,4.26,0,0,0,2.75,15V49A4.26,4.26,0,0,0,7,53.25H57A4.26,4.26,0,0,0,61.25,49V15A4.26,4.26,0,0,0,57,10.75ZM58.75,49A1.76,1.76,0,0,1,57,50.75H7A1.76,1.76,0,0,1,5.25,49V15A1.76,1.76,0,0,1,7,13.25H57A1.76,1.76,0,0,1,58.75,15Z" />
+        <path id="Path_317" data-name="Path 317" d="M24.34,31.63a6.75,6.75,0,1,0-8.76,0,11.43,11.43,0,0,0-7,10.53,1.25,1.25,0,0,0,2.5,0,8.91,8.91,0,0,1,17.82,0,1.25,1.25,0,0,0,2.5,0,11.43,11.43,0,0,0-7.06-10.53ZM15.71,26.5a4.261,4.261,0,1,1,.33,1.634,4.25,4.25,0,0,1-.33-1.634Z" />
+        <path id="Path_318" data-name="Path 318" d="M35.71,21.21h4.83a1.25,1.25,0,0,0,0-2.5H35.71a1.25,1.25,0,0,0,0,2.5Z" />
+        <path id="Path_319" data-name="Path 319" d="M53.18,25.61H35.71a1.25,1.25,0,1,0,0,2.5H53.18a1.25,1.25,0,0,0,0-2.5Z" />
+        <path id="Path_320" data-name="Path 320" d="M53.18,32.5H35.71a1.25,1.25,0,1,0,0,2.5H53.18a1.25,1.25,0,0,0,0-2.5Z" />
+        <path id="Path_321" data-name="Path 321" d="M53.18,39.39H35.71a1.25,1.25,0,1,0,0,2.5H53.18a1.25,1.25,0,0,0,0-2.5Z" />
+        <path id="Path_322" data-name="Path 322" d="M53.18,46.29H48.57a1.25,1.25,0,0,0,0,2.5h4.61a1.25,1.25,0,0,0,0-2.5Z" />
+    </g>
+</svg>
+
 }
 
 
@@ -100,7 +112,7 @@ const ApiCard = ({
                 <EnquiryModel
                     isOpen={isOpen}
                     onClose={() => setIsOpen(pre => !pre)}
-                    trigger={<Button variant={'link'}>Learn More</Button>}
+                    trigger={<Button>Get Now</Button>}
                     title='Api Enquiry'
                     form={<EnquiryForm
                         className='border-none'

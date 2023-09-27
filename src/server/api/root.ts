@@ -4,6 +4,7 @@ import { EnquiryRouter } from "./routers/enquiry.route";
 import { GeneralSettingRouter } from "./routers/generalSetting.route";
 import { SettingRouter } from "./routers/setting.route";
 import { SubscriberRouter } from "./routers/subscriber.route";
+import { PopupRouter } from "./routers/popup.route";
 
 /**
  * This is the primary router for your server.
@@ -13,7 +14,8 @@ import { SubscriberRouter } from "./routers/subscriber.route";
 export const appRouter = createTRPCRouter({
   enquiry: EnquiryRouter,
   setting: SettingRouter,
-  subscriber: SubscriberRouter
+  subscriber: SubscriberRouter,
+  popup: PopupRouter
 });
 
 // export type definition of API

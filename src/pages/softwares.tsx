@@ -8,7 +8,7 @@ import ContactSection from '@/components/shared/ContactSection'
 import ObjectCard from '@/components/shared/ObjectCard'
 import { useTrail, animated, useInView } from '@react-spring/web'
 import { cn, groupIntoRows } from '@/lib/utils'
-import { SoftwareCodes, SoftwareList } from '@/data/Softwares'
+import { SoftwareList } from '@/data/Softwares'
 import SoftwareCard from '@/components/shared/software/SoftwareCard'
 
 
@@ -37,7 +37,7 @@ const Row = ({
         description: string;
         image?: string;
         href: string;
-        code: SoftwareCodes
+        code: string
     }[],
     className?: string
 }) => {

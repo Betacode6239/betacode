@@ -6,13 +6,15 @@ import { WithSorting } from "./helpers/WithSorting";
 export const EnquiryTypesArray = [
     'GENERAL',
     'SOFTWARE',
-    'API'
+    'API',
+    'SERVICE'
 ]
 
 export const EnquiryTypeEnumSchema = z.enum([
     'GENERAL',
     'SOFTWARE',
-    'API'
+    'API',
+    'SERVICE'
 ])
 
 export type EnquiryTypes = z.TypeOf<typeof EnquiryTypeEnumSchema>;
@@ -29,6 +31,11 @@ export const SoftwareEnquirySchema = z.object({
 
 export const ApiEnquirySchema = z.object({
     apiName:z.string(),
+    message: z.string().optional()
+})
+export const ServiceEnquirySchema = z.object({
+    service:z.string(),
+    phone: z.string().optional(),
     message: z.string().optional()
 })
 

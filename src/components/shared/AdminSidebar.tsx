@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import React, { PropsWithChildren, ReactElement, ReactNode } from 'react'
 import Logo from './Logo'
-import { LayoutDashboard, MessageCircle, SettingsIcon, Users2 } from 'lucide-react'
+import { LayoutDashboard, MessageCircle, MonitorStop, SettingsIcon, Users2 } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { cn } from '@/lib/utils'
@@ -57,6 +57,11 @@ const AdminSideBar = ({
             lable: 'Subscriber',
             link: '/admin/subscriber',
             icon: <Users2 />
+        },
+        {
+            lable: 'Popup Modal',
+            link: '/admin/popup',
+            icon: <MonitorStop />
         },
         {
             lable: 'Settings',

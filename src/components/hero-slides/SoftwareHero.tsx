@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { cn } from '@/lib/utils';
 import { nanoid } from 'nanoid';
 import { useSpring, animated, useTrail, useInView } from '@react-spring/web';
+import WhatsappButton from '../shared/WhatsappButton';
+import Link from 'next/link';
 
 const HeroHeading = () => {
     return (
@@ -22,7 +24,7 @@ const HeroHeading = () => {
             speed={1}
             repeat={Infinity}
             style={{ display: 'inline-block' }}
-            className='text-4xl md:text-6xl font-bold'
+            className='text-4xl font-bold'
         />
     );
 }
@@ -69,15 +71,15 @@ const SoftwareHero = () => {
         {title: 'Reseller Software', className: 'left-[10%] bottom-[50%]'}
     ]
   return (
-    <div className=' w-full bg-primary/60 text-white py-32' ref={ref}>
+    <div className=' w-full bg-primary/60 text-white pt-32 pb-20' ref={ref}>
             <div className='grid grid-cols-1 lg:grid-cols-2 items-center container mx-auto justify-items-center gap-10'>
                 <div className='space-y-2 max-w-lg'>
-                    <animated.div style={trailes[0]!} className='min-h-[160px] md:min-h-[300px]'><HeroHeading /></animated.div>
+                    <animated.div style={trailes[0]!} className='min-h-[120px]'><HeroHeading /></animated.div>
                     <animated.p style={trailes[1]!}>Welcome to a new era of business efficiency and customer satisfaction. Our software solutions are engineered to propel your organization forward. From optimizing processes to enhancing user experiences, our suite of software can meet your every need. Explore the future of your industry with us.</animated.p>
                     
                     <animated.div style={trailes[2]!} className='flex gap-3 items-center pt-5'>
-                        <Button size={'lg'} >Contact Us</Button>
-                        <Button size={'lg'} >Our Api List</Button>
+                        <WhatsappButton><Button size={'lg'} >Contact Us</Button></WhatsappButton>
+                        <Link href="/softwares"><Button size={'lg'} >Our Softwares</Button></Link>
                     </animated.div>
 
                     <div className='flex gap-3 items-center pt-5'>
@@ -86,8 +88,8 @@ const SoftwareHero = () => {
                     </div>
                 </div>
                 <div className='w-full'>
-                    <div className='relative aspect-square z-10 overflow-hidden'>
-                       <div className='z-30'> <Image className='' alt="Softwares" src="/assets/images/software-hero-1.png" width={1000} height={667}/></div>
+                    <div className='relative aspect-[2/1.5] z-10 overflow-hidden'>
+                       <Image className='' alt="Softwares" src="/assets/images/software-hero-1.png" width={450} height={467}/>
 
                         {
                             tilesList.map((tile, index) => {

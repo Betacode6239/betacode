@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { cn } from '@/lib/utils';
 import { nanoid } from 'nanoid';
 import { useSpring, animated, useTrail, useInView } from '@react-spring/web';
+import WhatsappButton from '../shared/WhatsappButton';
+import Link from 'next/link';
 
 const HeroHeading = () => {
     return (
@@ -22,7 +24,7 @@ const HeroHeading = () => {
             speed={10}
             repeat={Infinity}
             style={{  display: 'inline-block' }}
-            className='text-4xl md:text-6xl font-bold'
+            className='text-4xl font-bold'
         />
     );
 }
@@ -50,12 +52,12 @@ const ServicesHero = () => {
 
             <div className='grid grid-cols-1 lg:grid-cols-2 items-center container mx-auto justify-items-center gap-10'>
                 <div className='space-y-2 max-w-lg'>
-                    <animated.div style={trailes[0]!} className='min-h-[120px] md:min-h-[250px]'><HeroHeading /></animated.div>
+                    <animated.div style={trailes[0]!} className=' md:min-h-[100px]'><HeroHeading /></animated.div>
                     <animated.p style={trailes[1]!}>Discover the limitless potential of our comprehensive API services. Seamlessly integrate our Recharge API, AEPS API, BBPS API, Bus Booking API, Vehicle Verification API, UTI API, Hotel Booking API, Flight Booking API, and more into your applications.</animated.p>
 
                     <animated.div style={trailes[2]!} className='flex gap-3 items-center pt-5'>
-                        <Button size={'lg'}>Contact Us</Button>
-                        <Button size={'lg'}>Our Api List</Button>
+                        <WhatsappButton><Button size={'lg'}>Contact Us</Button></WhatsappButton>
+                        <Link href="/service"><Button size={'lg'}>View Our Services</Button></Link>
                     </animated.div>
 
                     <div className='flex gap-3 items-center pt-5'>
@@ -64,12 +66,11 @@ const ServicesHero = () => {
                     </div>
                 </div>
                 <div className='w-full'>
-                    <div className='relative aspect-square z-10 overflow-hidden'>
+                    <div className='relative aspect-[2/1.5] z-10 overflow-hidden'>
                        <div className='z-30'> <Image className='' alt="Softwares" src="/assets/images/services-hero.svg" width={1000} height={667}/></div>
                         <div className="absolute bg-gradient-to-tr from-primary/20 to- w-[70%] h-[70%] -z-10 top-[50%] left-[50%] -translate-x-2/3 -translate-y-1/2" style={{borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70% '}}></div>
                     </div>
                 </div>
-
             </div>
         </div>
   )
