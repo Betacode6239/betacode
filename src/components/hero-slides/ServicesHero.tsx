@@ -48,11 +48,11 @@ const ServicesHero = () => {
         {title: 'Reseller Software', className: 'left-[10%] bottom-[50%]'}
     ]
   return (
-    <div className=' w-full  text-black py-32' ref={ref}>
+    <div className=' w-full  text-black bg-gray-100 pb-32 pt-44' ref={ref}>
 
             <div className='grid grid-cols-1 lg:grid-cols-2 items-center container mx-auto justify-items-center gap-10'>
                 <div className='space-y-2 max-w-lg'>
-                    <animated.div style={trailes[0]!} className=' md:min-h-[100px]'><HeroHeading /></animated.div>
+                    <animated.div style={trailes[0]!} className='min-h-[150px] md:min-h-[100px]'><HeroHeading /></animated.div>
                     <animated.p style={trailes[1]!}>Discover the limitless potential of our comprehensive API services. Seamlessly integrate our Recharge API, AEPS API, BBPS API, Bus Booking API, Vehicle Verification API, UTI API, Hotel Booking API, Flight Booking API, and more into your applications.</animated.p>
 
                     <animated.div style={trailes[2]!} className='flex gap-3 items-center pt-5'>

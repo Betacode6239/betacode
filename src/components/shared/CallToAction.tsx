@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '../ui/button'
 import { Check } from 'lucide-react'
 import Link from 'next/link'
 import { useInView, useTrail, animated } from '@react-spring/web'
 import { nanoid } from 'nanoid'
+import EnquiryModel from '../enquiry/EnquiryModel'
+import EnquiryForm from '../forms/EnquiryForm'
 
 
 const Statement = ({
@@ -20,6 +22,7 @@ const Statement = ({
 }
 
 const CallToAction = () => {
+    const [isOpen, setIsOpen] = useState(false)
     const [ref, inView] = useInView();
     const leftTrails = useTrail(3, {
         y: inView ? 0 : -50,
@@ -43,6 +46,7 @@ const CallToAction = () => {
         'Receive personalized solutions tailored to your needs'
     ]
     return (
+
         <section className='py-24 px-4 bg-primary/5'>
             <div className='container mx-auto grid grid-cols-1 md:grid-cols-2 justify-center gap-5'>
                 <div className='space-y-10'>
@@ -55,7 +59,18 @@ const CallToAction = () => {
                         </animated.div>
                     </div>
                     <animated.div style={leftTrails[2]}>
-                        <Link href={'/contact'}><Button size={'lg'}>Get Started</Button></Link>
+                        <EnquiryModel
+                            isOpen={isOpen}
+                            onClose={() => setIsOpen(pre => !pre)}
+                            trigger={<Button>Get Started</Button>}
+                            title='Get Started'
+                            form={<EnquiryForm
+                                className='border-none'
+                                onDone={() => {
+                                    setIsOpen(pre => !pre);
+                                }}
+                            />}
+                        />
                     </animated.div>
                 </div>
 
@@ -63,8 +78,8 @@ const CallToAction = () => {
                     <div className='space-y-3'>
                         {
                             rightTrails.map((trail, index) => {
-                                return <animated.div style={{...trail}} key={nanoid()}>
-                                     <Statement statement={statments[index]!} />
+                                return <animated.div style={{ ...trail }} key={nanoid()}>
+                                    <Statement statement={statments[index]!} />
                                 </animated.div>
                             })
                         }

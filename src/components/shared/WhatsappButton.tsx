@@ -13,7 +13,7 @@ const WhatsappButton = ({
 }) => {
     const { data, isLoading = true } = api.setting.get.useQuery<any, IntegrationSettingOutput>({ type: 'INTEGRATION' })
     return (
-        <a target='_blank' href={`https://wa.me/${data?.value.whatsapp?.number}`}>
+        <a target='_blank' href={data?.value.whatsapp?.number ? `https://wa.me/${data?.value.whatsapp?.number}` : '#'}>
             {
                 children
                 ||

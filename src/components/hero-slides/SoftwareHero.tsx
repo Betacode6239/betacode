@@ -71,10 +71,10 @@ const SoftwareHero = () => {
         {title: 'Reseller Software', className: 'left-[10%] bottom-[50%]'}
     ]
   return (
-    <div className=' w-full bg-primary/60 text-white pt-32 pb-20' ref={ref}>
+    <div className=' w-full bg-primary/60 text-white pt-44 md:pt-32 pb-20' ref={ref}>
             <div className='grid grid-cols-1 lg:grid-cols-2 items-center container mx-auto justify-items-center gap-10'>
                 <div className='space-y-2 max-w-lg'>
-                    <animated.div style={trailes[0]!} className='min-h-[120px]'><HeroHeading /></animated.div>
+                    <animated.div style={trailes[0]!} className='min-h-[200px] md:min-h-[120px]'><HeroHeading /></animated.div>
                     <animated.p style={trailes[1]!}>Welcome to a new era of business efficiency and customer satisfaction. Our software solutions are engineered to propel your organization forward. From optimizing processes to enhancing user experiences, our suite of software can meet your every need. Explore the future of your industry with us.</animated.p>
                     
                     <animated.div style={trailes[2]!} className='flex gap-3 items-center pt-5'>

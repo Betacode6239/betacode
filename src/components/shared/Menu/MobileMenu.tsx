@@ -15,6 +15,7 @@ import { MobileMenuContext } from '@/lib/context/mobile-menu/MobileMenuContext'
 import WhatsappButton from '../WhatsappButton'
 import { api } from '@/utils/api'
 import { GeneralSettingOutput } from '@/schema/settingSchema'
+import Logo from '../Logo'
 
 type m = {
     lable: string,
@@ -109,7 +110,7 @@ const MobileMenu = ({
     return (
         <div className='space-y-5 p-2  h-full relative '>
             <div className='p-2 flex items-center justify-between'>
-                <span className='text-2xl font-bold text-primary'>BT</span>
+                <Logo/>
 
                 <Button variant={'outline'} size={'sm'} onClick={() => setDrawerOpen(false)}><Cross2Icon /></Button>
             </div>
@@ -121,9 +122,8 @@ const MobileMenu = ({
                 }
             </div>
 
-            <div className='flex items-center justify-center gap-3'>
-                <Button>Contact</Button>
-                <WhatsappButton/>
+            <div className='flex justify-center gap-3'>
+                <WhatsappButton />
             </div>
 
 

@@ -4,6 +4,8 @@ import { Button } from '../ui/button'
 import { nanoid } from 'nanoid'
 import { useInView, useTrail, animated } from '@react-spring/web'
 import { ServiceCodes, servicesList } from '@/data/ServiceData'
+import Link from 'next/link'
+import WhatsappButton from '../shared/WhatsappButton'
 
 
 const ServiceSectionCard = ({
@@ -151,8 +153,8 @@ const ServicesSection = () => {
                         </SectionDescription>
                     </animated.div>
                     <div className="flex gap-3 mt-5">
-                        <animated.div style={leftTrails[2]}><Button size={'lg'}>Contact Us</Button></animated.div>
-                        <animated.div style={leftTrails[3]}><Button size={'lg'}>Whatsapp</Button></animated.div>
+                        <animated.div style={leftTrails[2]}><Link href={'/contact'}><Button>Contact Us</Button></Link></animated.div>
+                        <animated.div style={leftTrails[3]}><WhatsappButton/></animated.div>
                     </div>
                 </div>
 
