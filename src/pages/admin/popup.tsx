@@ -118,7 +118,6 @@ export const PopupCard = ({
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const files = e.target.files;
-
         if (files && files[0]) {
             void upload(files[0]);
         }

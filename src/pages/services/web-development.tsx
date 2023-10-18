@@ -1,4 +1,12 @@
+import EnquiryForm from '@/components/forms/EnquiryForm'
+import ServiceEnquiry from '@/components/forms/ServiceEnquiryForm'
+import Features from '@/components/services/webdevelopment/Features'
 import Hero from '@/components/services/webdevelopment/Hero'
+import OfferedServices from '@/components/services/webdevelopment/OfferedServices'
+import WebDevWhyChooseUs from '@/components/services/webdevelopment/WebDevWhyChooseUs'
+import ContactSection from '@/components/shared/ContactSection'
+import Section from '@/components/shared/Section'
+import TestimonialSection from '@/components/shared/TestimonialSection'
 import React from 'react'
 
 
@@ -57,7 +65,18 @@ import React from 'react'
 const WebDevelopmentPage = () => {
   return (
     <>
-    <Hero/>
+      <Hero />
+      <OfferedServices />
+      <Section className='pt-0'><WebDevWhyChooseUs /></Section>
+
+      <TestimonialSection />
+      <ContactSection contactForm={
+        <EnquiryForm
+          className='border-none shadow-2xl'
+          title="Enquiry Our Services"
+          subForm={(form) => <ServiceEnquiry form={form} />}
+        />
+      } />
     </>
   )
 }

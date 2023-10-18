@@ -62,7 +62,8 @@ export const EnquiryRouter = createTRPCRouter({
                         {name: {contains: input.search, mode: 'insensitive'}}
                     ]
                 } : undefined
-            }
+            },
+            orderBy: input.sortBy || {createdAt: 'desc'}
         }
         return await paginate<Enquiry, Prisma.EnquiryFindManyArgs>(
             ctx.prisma.enquiry,

@@ -1,3 +1,32 @@
+const arr = [
+    'recharge',
+    'aeps',
+    'bbps',
+    'dmt',
+    'uti',
+    'hotel',
+    'busbooking',
+    'flight',
+    'ecommerce',
+    'crm',
+    'erp',
+    'education',
+    'loanmodule',
+    'gaming',
+    'fooddelivery',
+    'apireselling',
+    'cabbooking',
+    'grocery',
+    'homeservice',
+    'sportsbetting',
+    'schoolmanagement',
+    'hrms',
+    'employeetracking',
+    'travelbooking'
+] as const;
+
+export type SoftwareCodes = typeof arr[number]
+
 
 
 
@@ -6,26 +35,26 @@ export const SoftwareList: {
     description: string,
     image?: string,
     href: string,
-    code: string
+    code: SoftwareCodes
 }[] = [
     {
         name: "Recharge Software",
         description: "Simplify mobile recharge transactions with our versatile Recharge Software.",
-        image: "",
+        image: "/assets/images/mobile-recharge-api.jpg",
         href: "/softwares",
         code: "recharge"
     },
     {
         name: "AEPS Software",
         description: "Enable secure Aadhaar Enabled Payment System transactions with our AEPS Software.",
-        image: "",
+        image: "/assets/images/aeps-image.png",
         href: "/softwares",
         code: "aeps"
     },
     {
         name: "BBPS Software",
         description: "Streamline bill payments across various categories with our robust BBPS Software.",
-        image: "",
+        image: "/assets/images/bbps-image.png",
         href: "/softwares",
         code: "bbps"
     },
@@ -39,7 +68,7 @@ export const SoftwareList: {
     {
         name: "UTI Software",
         description: "Access real-time Unit Trust of India (UTI) investment data with our UTI Software.",
-        image: "",
+        image: "/assets/images/pancard.png",
         href: "/softwares",
         code: "uti"
     },
@@ -60,7 +89,7 @@ export const SoftwareList: {
     {
         name: "Flight Software",
         description: "Offer efficient flight booking experiences using our Flight Booking Software.",
-        image: "",
+        image: "/assets/images/flight-booking.png",
         href: "/softwares",
         code: "flight"
     },
@@ -74,7 +103,7 @@ export const SoftwareList: {
     {
         name: "CRM Software",
         description: "Build strong customer relationships and drive sales with our CRM Software.",
-        image: "",
+        image: "/assets/images/crm.png",
         href: "/softwares",
         code: "crm"
     },
@@ -88,7 +117,7 @@ export const SoftwareList: {
     {
         name: "Online Education Software",
         description: "Deliver engaging online education experiences with our user-friendly software.",
-        image: "",
+        image: "/assets/images/school-managment.png",
         href: "/softwares",
         code: "education"
     },
@@ -102,56 +131,56 @@ export const SoftwareList: {
     {
         name: "Gaming Software",
         description: "Enter the world of gaming with our feature-rich Gaming Software.",
-        image: "",
+        image: "/assets/images/fantasy-software.png",
         href: "/softwares",
         code: "gaming"
     },
     {
         name: "Food Delivery Software",
         description: "Streamline food delivery operations and enhance customer experiences with our software.",
-        image: "",
+        image: "/assets/images/food-delivery.png",
         href: "/softwares",
         code: "fooddelivery"
     },
     {
         name: "API Reselling Software",
         description: "Launch your API reselling business with our API Reselling Software.",
-        image: "",
+        image: "/assets/images/ill-3.png",
         href: "/softwares",
         code: "apireselling"
     },
     {
         name: "Cab Booking Software",
         description: "Efficiently manage your fleet and bookings with our user-friendly cab booking software.",
-        image: "",
+        image: "/assets/images/car-booking.jpg",
         href: "/softwares",
         code: "cabbooking"
     },
     {
         name: "Grocery Software",
         description: "Transform your grocery store into a seamless online marketplace with our grocery software.",
-        image: "",
+        image: "/assets/images/grocery-software.png",
         href: "/softwares",
         code: "grocery"
     },
     {
         name: "Home Service Software",
         description: "Offer a variety of home services with ease, from repairs to cleaning, through our software.",
-        image: "",
+        image: "/assets/images/home-service.png",
         href: "/softwares",
         code: "homeservice"
     },
     {
         name: "Sports Betting Software",
         description: "Deliver a secure and exciting sports betting experience with our software.",
-        image: "",
+        image: "/assets/images/sport-betting.png",
         href: "/softwares",
         code: "sportsbetting"
     },
     {
         name: "School Management Software",
         description: "Efficiently manage school operations, from attendance to exam results, using our software.",
-        image: "",
+        image: "/assets/images/school-managment.png",
         href: "/softwares",
         code: "schoolmanagement"
     },
@@ -172,15 +201,14 @@ export const SoftwareList: {
     {
         name: "Travel Booking Software",
         description: "Facilitate seamless travel bookings and reservations with our travel software.",
-        image: "",
+        image: "/assets/images/flight-booking.png",
         href: "/softwares",
         code: "travelbooking"
     }
 
 ];
 
-// Array of software codes
-const softwareCodes = SoftwareList.map(software => software.code);
+
 
 
 export function getSoftwareByCode(code: string) {

@@ -42,4 +42,15 @@ const Section = (props: React.HTMLAttributes<HTMLElement>) => {
     )
 }
 
+export const SectionHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({className, ...props}, ref) => {
+    return <div
+    ref={ref}
+    className={cn([
+        'pb-20',
+        className
+    ])}
+     {...props}
+     />
+})
+
 export default Section
