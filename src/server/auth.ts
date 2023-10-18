@@ -5,7 +5,7 @@ import {
   type NextAuthOptions,
   type DefaultSession,
 } from "next-auth";
-import DiscordProvider from "next-auth/providers/discord";
+import CredentialsProvider from 'next-auth/providers/credentials';
 import { env } from "@/env.mjs";
 import { prisma } from "@/server/db";
 
@@ -37,20 +37,24 @@ declare module "next-auth" {
  */
 export const authOptions: NextAuthOptions = {
   callbacks: {
-    session: ({ session, user }) => ({
-      ...session,
-      user: {
-        ...session.user,
-        id: user.id,
-      },
-    }),
+    // session: ({ session, user }) => ({
+    //   ...session,
+    //   user: {
+    //     ...session.user,
+    //     id: user.id,
+    //   },
+    // }),
+  },
+  session: {
+    strategy: 'jwt',
+    maxAge: 30000
   },
   adapter: PrismaAdapter(prisma),
   providers: [
-    DiscordProvider({
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
-    }),
+    // DiscordProvider({
+    //   clientId: env.DISCORD_CLIENT_ID,
+    //   clientSecret: env.DISCORD_CLIENT_SECRET,
+    // }),
     /**
      * ...add more providers here.
      *
@@ -60,6 +64,27 @@ export const authOptions: NextAuthOptions = {
      *
      * @see https://next-auth.js.org/providers/github
      */
+
+    CredentialsProvider({
+
+      name: 'Credentials',
+      credentials: {
+        username: { label: "Username", type: "text", placeholder: "jsmith" },
+        password: { label: "Password", type: "password" }
+      },
+      async authorize(credentials, req) {
+        const admin = { id: 'dhuioi353sf', name: 'Admin', email: 'betacode6239@gmail.com', role: 'ADMIN' }
+        const adminPass = 'Betacode6239##';
+
+
+        if (credentials?.username === admin.email && credentials.password === adminPass) {
+          // console.log("Verified");
+          return admin
+        }
+
+        return null
+      }
+    })
   ],
 };
 
